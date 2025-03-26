@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono&display=swap');
+
+/* Scrollbar styling - START */
+/* Default hide scrollbar on all pages */
+html:not(.blog-post-page) {
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+/* General styles */
+body {
+    font-family: 'DM Mono', monospace;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: black;
+    background-color: #f7f9fb;
+}
+
+/* Container styles */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Header styles */
+header {
+    padding: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid #555;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: black;
+}
+
+header p {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: black;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+h2 {
+    font-size: 1.2rem;
+    border-bottom: 1px solid #555;
+    padding-bottom: 0.3rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: black;
+}
+
+h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+ul,
+ol {
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Footer styles */
+footer {
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid #555;
+}
+
+footer p {
+    margin: 0;
+    color: black;
+}
+
+/* Link styles */
+a {
+    color: #5671f8;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* New rule to override the previous one for header links */
+a.header-link:hover {
+    text-decoration: none;
+}
+
+/* Mobile specific changes */
+@media screen and (max-width: 600px) {
+    /* Container styles */
+    .container {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+
+    /* Header styles */
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    header p {
+        font-size: 0.8rem;
+    }
+
+    /* Main content styles */
+    main {
+        padding: 1rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Inline code block styling */
+code.inline-code {
+    background-color: #f7f9fb;
+    padding: 0.2rem 0.4rem;
+    border-radius: 3px;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.9em;
+    color: #24292f;
+    border: 1px solid #e1e4e8;
+    white-space: nowrap;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+/* Hover state for inline code */
+code.inline-code:hover {
+    border-color: #959fa9;
+}
+
+/* For inline code blocks inside links */
+a code.inline-code {
+    color: #5671f8;
+}
+
+/* For inline code blocks inside headings */
+h1 code.inline-code,
+h2 code.inline-code,
+h3 code.inline-code,
+h4 code.inline-code {
+    font-size: 0.9em;
+}
