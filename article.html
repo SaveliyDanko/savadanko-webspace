@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Article</title>
+
+  <!--Стили для подсветки кода (можно поменять тему) -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+
+  <!--Общий CSS для статьи (можешь заменить своим styles.css) -->
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 2rem;
+      line-height: 1.6;
+      background: #fefefe;
+      color: #222;
+    }
+
+    h1, h2, h3 {
+      color: #333;
+    }
+
+    pre {
+      background: #f6f8fa;
+      padding: 1rem;
+      overflow-x: auto;
+      border-radius: 6px;
+    }
+
+    code {
+      font-family: "Fira Code", monospace;
+    }
+
+    a {
+      color: #0366d6;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .back-link {
+      margin-top: 2rem;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1 id="article-title">Loading...</h1>
+    <article id="article-content"></article>
+    <a class="back-link" href="index.html">&larr; Back to Articles</a>
+  </main>
+
+  <!--Библиотека marked.js для парсинга Markdown -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <!--Библиотека highlight.js для подсветки кода -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+  <!--JS-логика загрузки статьи -->
+  <script>
+    // Получаем параметр file из URL
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    const fileName = getQueryParam("file");
+
+    if (!fileName) {
+      document.getElementById("article-title").textContent = "No article specified";
+      document.getElementById("article-content").innerHTML = "<p>Please specify a file in the URL.</p>";
+    } else {
+      // Настраиваем marked с поддержкой highlight.js
+      marked.setOptions({
+        highlight: function(code, lang) {
+          if (lang && hljs.getLanguage(lang)) {
+            return hljs.highlight(code, { language: lang }).value;
+          }
+          return hljs.highlightAuto(code).value;
+        }
+      });
+
+      // Загружаем и рендерим Markdown-файл
+      fetch(`articles/${fileName}`)
+        .then(res => {
+          if (!res.ok) {
+            throw new Error("Failed to load article: " + res.status);
+          }
+          return res.text();
+        })
+        .then(markdown => {
+          const html = marked.parse(markdown);
+          document.getElementById("article-content").innerHTML = html;
+
+          // Заголовок = первый H1 из контента
+          const firstHeading = document.querySelector("#article-content h1");
+          if (firstHeading) {
+            document.getElementById("article-title").textContent = firstHeading.textContent;
+            firstHeading.remove(); // убрать дублирование
+          } else {
+            document.getElementById("article-title").textContent = fileName.replace(".md", "");
+          }
+
+          // Подсветка кода
+          hljs.highlightAll();
+        })
+        .catch(err => {
+          document.getElementById("article-title").textContent = "Error";
+          document.getElementById("article-content").innerHTML = `<p>${err.message}</p>`;
+        });
+    }
+  </script>
+</body>
+</html>
