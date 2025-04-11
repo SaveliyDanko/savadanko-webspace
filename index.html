@@ -12,32 +12,44 @@
         <div class="page-content">
             <div class="container">
                 <header>
-                    <h1>Sava Danko | Software Engineer</h1>
-                    <p>
-                        Russia, GMT+3 |
-                        <a href="https://t.me/savadanko">Telegram</a> |
-                        <a href="https://github.com/saveliydanko">Github</a> |
-                    </p>
+                    <div class="header-content">
+                        <div class="header-left">
+                            <h1 data-key="name">Saveliy Danko | Software Engineer</h1>
+                            <p data-key="Russia">
+                                Russia, GMT+3 |
+                                <a href="https://t.me/savadanko">Telegram</a> |
+                                <a href="https://github.com/saveliydanko">Github</a> |
+                            </p>
+                        </div>
+                        <div class="header-right">
+                            <button id="lang-toggle">RU / EN</button>
+                            <button id="theme-toggle">🌙 / ☀️</button>
+                        </div>
+                    </div>
                 </header>
                 <main>
                     <section>
-                        <p>
+                        <p data-key="intro1">
                             I am a student at ITMO University, majoring in Software Engineering with a specialization in System Programming and Software Development. I’m passionate about building applications and constantly improving my skills by working on new projects and experimenting with different technologies.
                         </p>
-                        <p>
+
+                        <p data-key="intro2">
                             I actively follow modern IT trends and strive for a deep understanding of software system architecture. In my free time, I enjoy playing volleyball, living in Saint Petersburg, and simply making the most of life by balancing personal growth with professional development.
                         </p>
-                        <p>
+
+                        <p data-key="intro3">
                             This website is my personal project. In the future, it will feature articles, photos, project descriptions, and other content that reflects my work, interests, and journey in the field of software development.
                         </p>
                     </section>
 
                     <section>
-                        <a class="header-link" href="#hard-skills"><h2 id="hard-skills">Hard-Skills</h2></a>
+                        <a class="header-link" href="#hard-skills">
+                            <h2 id="hard-skills" data-key="hardtitle">Hard-Skills</h2>
+                        </a>
                         <ul>
-
+                    
                             <li>
-                                <h3>🖥️ Programming Languages</h3>
+                                <h3 data-key="hard1">🖥️ Programming Languages</h3>
                                 <ul>
                                     <li>Java</li>
                                     <li>Groovy</li>
@@ -48,9 +60,9 @@
                                     <li>HTML, CSS</li>
                                 </ul>
                             </li>
-
+                    
                             <li>
-                                <h3>🛠️ Frameworks & Tools</h3>
+                                <h3 data-key="hard2">🛠️ Frameworks & Tools</h3>
                                 <ul>
                                     <li>Spring Framework</li>
                                     <li>Maven, Gradle</li>
@@ -58,47 +70,49 @@
                                     <li>Kafka</li>
                                 </ul>
                             </li>
-
+                    
                             <li>
-                                <h3>🗄️ Databases</h3>
+                                <h3 data-key="hard3">🗄️ Databases</h3>
                                 <ul>
                                     <li>PostgreSQL</li>
                                 </ul>
                             </li>
-
+                    
                             <li>
-                                <h3>🌐 Web Development</h3>
+                                <h3 data-key="hard4">🌐 Web Development</h3>
                                 <ul>
-                                    <li>Fundamentals of frontend development</li>
-                                    <li>Creating responsive user interfaces</li>
-                                    <li>Experience working with REST APIs</li>
+                                    <li data-key="web1">Fundamentals of frontend development</li>
+                                    <li data-key="web2">Creating responsive user interfaces</li>
+                                    <li data-key="web3">Experience working with REST APIs</li>
                                 </ul>
                             </li>
-
+                    
                             <li>
-                                <h3>🌍 Languages</h3>
+                                <h3 data-key="hard5">🌍 Languages</h3>
                                 <ul>
-                                    <li>English — B2 (Upper-Intermediate)</li>
-                                    <li>Russian — Native</li>
+                                    <li data-key="lang1">English — B2 (Upper-Intermediate)</li>
+                                    <li data-key="lang2">Russian — Native</li>
                                 </ul>
                             </li>
-
+                    
                         </ul>
                     </section>
+                    
 
                     <section>
-                        <a class="header-link" href="#soft-skills"><h2 id="soft-skills">Soft-Skills</h2></a>
+                        <a class="header-link" href="#soft-skills"><h2 id="soft-skills" data-key="softtitle">Soft-Skills</h2></a>
                         <ul>
-                            <li>Communication — able to work effectively in a team and express ideas clearly</li>
-                            <li>Stress resistance — stay calm and productive under pressure</li>
-                            <li>Responsibility — complete tasks on time and follow through</li>
-                            <li>Adaptability — quickly adjust to new environments and challenges</li>
-                            <li>Friendliness — contribute to a positive and supportive team atmosphere</li>
-                            <li>Curiosity — always learning and exploring new technologies</li>
+                            <li data-key="soft1">Communication — able to work effectively in a team and express ideas clearly</li>
+                            <li data-key="soft2">Stress resistance — stay calm and productive under pressure</li>
+                            <li data-key="soft3">Responsibility — complete tasks on time and follow through</li>
+                            <li data-key="soft4">Adaptability — quickly adjust to new environments and challenges</li>
+                            <li data-key="soft5">Friendliness — contribute to a positive and supportive team atmosphere</li>
+                            <li data-key="soft6">Curiosity — always learning and exploring new technologies</li>
+
                         </ul>
                     </section>
                     <section>
-                        <a class="header-link" href="#articles"><h2 id="articles">Articles</h2></a>
+                        <a class="header-link" href="#articles"><h2 id="articles" data-key="articles">Articles</h2></a>
                         <ul id="articles-list"></ul>
                     </section>
                 </main>
@@ -109,5 +123,6 @@
         </div>
 
         <script src="JS/articles.js"></script>
+        <script src="JS/script.js"></script>
     </body>
 </html>

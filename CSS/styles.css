@@ -17,6 +17,39 @@ body {
     background-color: #f7f9fb;
 }
 
+/* Тёмная тема */
+body.dark-theme {
+    background-color: #1e1e1e;
+    color: #f7f9fb;
+}
+
+/* Пример: стили ссылок/кнопок при тёмной теме */
+body.dark-theme a {
+    color: #dedede;
+}
+
+body.dark-theme .header-right button {
+    border: 1px solid #ccc;
+    background-color: #444;
+    color: #fff;
+}
+
+body.dark-theme .header-right button:hover {
+    background-color: #555;
+}
+
+body.dark-theme h1 {
+    color: #fff;
+}
+
+body.dark-theme h2 {
+    color: #fff;
+}
+
+body.dark-theme p {
+    color: #fff;
+}
+
 /* Container styles */
 .container {
     max-width: 800px;
@@ -26,8 +59,39 @@ body {
 /* Header styles */
 header {
     padding: 1.5rem;
-    text-align: center;
     border-bottom: 1px solid #555;
+    background-color: inherit;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header-left {
+    text-align: left;
+    flex: 1;
+}
+
+.header-right {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.header-right button {
+    font-family: inherit;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.header-right button:hover {
+    background-color: #e0e0e0;
 }
 
 header h1 {
