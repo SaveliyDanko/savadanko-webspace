@@ -1,7 +1,6 @@
 const articles = [
-  { file: 'JavaLowLevel.md', title: 'Java Low Level',
-    file: 'CFI.md', title: 'CFI'
-   }
+  { file: 'JavaLowLevel.md', title: 'Java Low Level'},
+  { file: 'CFI.md', title: 'CFI' }
 ];
 
 // После загрузки DOM формируем ссылки в #articles-list
