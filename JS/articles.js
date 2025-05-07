@@ -1,5 +1,5 @@
 const articles = [
-  { file: 'JavaLowLevel.md', title: 'Java Low Level'},
+  { file: 'JavaLowLevel.md', title: 'Java Low Level' },
   { file: 'CFI.md', title: 'CFI' }
 ];
 
@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
   articles.forEach(article => {
     const li = document.createElement('li');
     const a = document.createElement('a');
-    a.href = `article.html?file=${article.file}`;
+    a.href = `article.html?file=${encodeURIComponent(article.file)}`;
     a.textContent = article.title;
     li.appendChild(a);
     list.appendChild(li);
